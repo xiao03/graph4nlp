@@ -1,6 +1,11 @@
 name: CI
-on: [push, pull_request]
-
+on: 
+  push:
+    branches:
+     - "develop"
+  pull_request:
+    branches:
+     - "develop"
 # Run linter with github actions for quick feedbacks.
 # Run macos tests with github actions. Linux (CPU & GPU) tests currently runs on CircleCI
 jobs:

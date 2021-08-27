@@ -6,14 +6,15 @@ on:
   pull_request:
     branches:
      - "develop"
+
 # Run linter with github actions for quick feedbacks.
 # Run macos tests with github actions. Linux (CPU & GPU) tests currently runs on CircleCI
 jobs:
+  continue-on-error: true
   linter:
     runs-on: ubuntu-latest
     # run on PRs, or commits to facebookresearch (not internal)
     steps:
-      - continue-on-error: true
       - uses: actions/checkout@v2
       - name: Set up Python 3.6
         uses: actions/setup-python@v2
